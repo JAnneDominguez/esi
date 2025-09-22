@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juventud y Diversidad - Construyendo Identidades Saludables</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .section-active {
+            display: block;
+        }
+        
+        .section-hidden {
+            display: none;
+        }
+        
+        .nav-active {
+            background-color: #4f46e5;
+            color: white;
+        }
+        
+        .quiz-option {
+            transition: all 0.2s ease;
+        }
+        
+        .quiz-option:hover {
+            background-color: #f3f4f6;
+        }
+        
+        .quiz-correct {
+            background-color: #d1fae5 !important;
+            border-color: #10b981;
+        }
+        
+        .quiz-incorrect {
+            background-color: #fee2e2 !important;
+            border-color: #ef4444;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="gradient-bg text-white py-8">
+        <div class="container mx-auto px-6">
+            <h1 class="text-4xl font-bold text-center mb-4">🌟 Juventud y Diversidad</h1>
+            <p class="text-xl text-center opacity-90">Construyendo identidades saludables y relaciones respetuosas</p>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-wrap justify-center space-x-2 py-4">
+                <button onclick="showSection('formas-ser')" class="nav-btn px-4 py-2 rounded-lg text-sm font-medium transition-colors nav-active">
+                    Formas de Ser Joven
+                </button>
+                <button onclick="showSection('respeto')" class="nav-btn px-4 py-2 rounded-lg text-sm font-medium transition-colors">
+                    Respeto y Diversidad
+                </button>
+                <button onclick="showSection('identidad')" class="nav-btn px-4 py-2 rounded-lg text-sm font-medium transition-colors">
+                    Identidad y Proyecto
+                </button>
+                <button onclick="showSection('belleza')" class="nav-btn px-4 py-2 rounded-lg text-sm font-medium transition-colors">
+                    Patrones de Belleza
+                </button>
+                <button onclick="showSection('salud-sexual')" class="nav-btn px-4 py-2 rounded-lg text-sm font-medium transition-colors">
+                    Salud Sexual
+                </button>
+                <button onclick="showSection('amor-cuidado')" class="nav-btn px-4 py-2 rounded-lg text-sm font-medium transition-colors">
+                    Amor y Cuidado
+                </button>
+                <button onclick="showSection('violencia')" class="nav-btn px-4 py-2 rounded-lg text-sm font-medium transition-colors">
+                    Violencia de Género
+                </button>
+                <button onclick="showSection('ciudadania')" class="nav-btn px-4 py-2 rounded-lg text-sm font-medium transition-colors">
+                    Ciudadanía Digital
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 py-8">
+        
+        <!-- Sección: Formas de Ser Joven -->
+        <section id="formas-ser" class="section-content section-active">
+            <div class="bg-white rounded-xl shadow-lg p-8 mb-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6 flex items-center">
+                    🎭 Las Distintas Formas de Ser Joven
+                </h2>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <p class="text-gray-600 mb-6 leading-relaxed">
+                            Ser joven no tiene una sola definición. Cada persona vive su juventud de manera única, 
+                            influenciada por su contexto social, cultural, económico y sus experiencias personales.
+                        </p>
+                        
+                        <div class="space-y-4">
+                            <div class="bg-blue-50 p-4 rounded-lg">
+                                <h4 class="font-semibold text-blue-800 mb-2">🏙️ Contexto Urbano</h4>
+                                <p class="text-blue-700 text-sm">Acceso a tecnología, diversidad cultural, oportunidades educativas variadas</p>
+                            </div>
+                            
+                            <div class="bg-green-50 p-4 rounded-lg">
+                                <h4 class="font-semibold text-green-800 mb-2">🌾 Contexto Rural</h4>
+                                <p class="text-green-700 text-sm">Conexión con la naturaleza, tradiciones familiares, responsabilidades tempranas</p>
+                            </div>
+                            
+                            <div class="bg-purple-50 p-4 rounded-lg">
+                                <h4 class="font-semibold text-purple-800 mb-2">🎨 Expresión Cultural</h4>
+                                <p class="text-purple-700 text-sm">Arte, música, deportes, activismo social como formas de identidad</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-indigo-100 to-purple-100 p-6 rounded-xl">
+                        <h4 class="font-semibold text-gray-800 mb-4">💭 Reflexiona:</h4>
+                        <div class="space-y-3">
+                            <div class="bg-white p-3 rounded-lg shadow-sm">
+                                <p class="text-sm text-gray-700">¿Cómo influye tu entorno en tu forma de ser joven?</p>
+                            </div>
+                            <div class="bg-white p-3 rounded-lg shadow-sm">
+                                <p class="text-sm text-gray-700">¿Qué experiencias han marcado tu juventud?</p>
+                            </div>
+                            <div class="bg-white p-3 rounded-lg shadow-sm">
+                                <p class="text-sm text-gray-700">¿Cómo te diferencias de otros jóvenes de tu edad?</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección: Respeto y Diversidad -->
+        <section id="respeto" class="section-content section-hidden">
+            <div class="bg-white rounded-xl shadow-lg p-8 mb-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6 flex items-center">
+                    🤝 El Respeto a las Distintas Maneras de Ser
+                </h2>
+                
+                <div class="grid md:grid-cols-3 gap-6 mb-8">
+                    <div class="card-hover bg-gradient-to-br from-pink-50 to-rose-100 p-6 rounded-xl">
+                        <div class="text-3xl mb-4">🌈</div>
+                        <h4 class="font-semibold text-gray-800 mb-2">Diversidad Sexual</h4>
+                        <p class="text-gray-600 text-sm">Respeto por diferentes orientaciones sexuales e identidades de género</p>
+                    </div>
+                    
+                    <div class="card-hover bg-gradient-to-br from-blue-50 to-indigo-100 p-6 rounded-xl">
+                        <div class="text-3xl mb-4">🎭</div>
+                        <h4 class="font-semibold text-gray-800 mb-2">Expresión Personal</h4>
+                        <p class="text-gray-600 text-sm">Libertad para expresarse a través del arte, la moda y las ideas</p>
+                    </div>
+                    
+                    <div class="card-hover bg-gradient-to-br from-green-50 to-emerald-100 p-6 rounded-xl">
+                        <div class="text-3xl mb-4">🌍</div>
+                        <h4 class="font-semibold text-gray-800 mb-2">Diversidad Cultural</h4>
+                        <p class="text-gray-600 text-sm">Valoración de diferentes tradiciones, idiomas y costumbres</p>
+                    </div>
+                </div>
+                
+                <div class="bg-yellow-50 border-l-4 border-yellow-400 p-6 rounded-r-lg">
+                    <h4 class="font-semibold text-yellow-800 mb-3">💡 Principios del Respeto</h4>
+                    <ul class="space-y-2 text-yellow-700">
+                        <li class="flex items-start"><span class="mr-2">✓</span> Escuchar sin juzgar</li>
+                        <li class="flex items-start"><span class="mr-2">✓</span> Reconocer que la diferencia enriquece</li>
+                        <li class="flex items-start"><span class="mr-2">✓</span> Evitar estereotipos y prejuicios</li>
+                        <li class="flex items-start"><span class="mr-2">✓</span> Defender los derechos de todos</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección: Identidad y Proyecto de Vida -->
+        <section id="identidad" class="section-content section-hidden">
+            <div class="bg-white rounded-xl shadow-lg p-8 mb-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6 flex items-center">
+                    🎯 Construcción de Identidad y Proyecto de Vida
+                </h2>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h4 class="text-xl font-semibold text-gray-800 mb-4">🪞 Construyendo tu Identidad</h4>
+                        <div class="space-y-4">
+                            <div class="flex items-start space-x-3">
+                                <div class="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold">1</div>
+                                <div>
+                                    <h5 class="font-medium text-gray-800">Autoconocimiento</h5>
+                                    <p class="text-gray-600 text-sm">Reflexiona sobre tus valores, intereses y fortalezas</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-3">
+                                <div class="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold">2</div>
+                                <div>
+                                    <h5 class="font-medium text-gray-800">Exploración</h5>
+                                    <p class="text-gray-600 text-sm">Prueba nuevas actividades y experiencias</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-3">
+                                <div class="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold">3</div>
+                                <div>
+                                    <h5 class="font-medium text-gray-800">Decisión</h5>
+                                    <p class="text-gray-600 text-sm">Toma decisiones conscientes sobre quién quieres ser</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-xl font-semibold text-gray-800 mb-4">🚀 Tu Proyecto de Vida</h4>
+                        <div class="bg-gradient-to-br from-purple-50 to-indigo-100 p-6 rounded-xl">
+                            <div class="space-y-4">
+                                <div>
+                                    <h5 class="font-medium text-purple-800 mb-2">Metas a Corto Plazo (1-2 años)</h5>
+                                    <div class="bg-white p-3 rounded-lg">
+                                        <p class="text-sm text-gray-600">Estudios, habilidades, relaciones</p>
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <h5 class="font-medium text-purple-800 mb-2">Metas a Mediano Plazo (3-5 años)</h5>
+                                    <div class="bg-white p-3 rounded-lg">
+                                        <p class="text-sm text-gray-600">Carrera profesional, independencia</p>
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <h5 class="font-medium text-purple-800 mb-2">Visión a Largo Plazo (5+ años)</h5>
+                                    <div class="bg-white p-3 rounded-lg">
+                                        <p class="text-sm text-gray-600">Impacto social, realización personal</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección: Patrones de Belleza -->
+        <section id="belleza" class="section-content section-hidden">
+            <div class="bg-white rounded-xl shadow-lg p-8 mb-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6 flex items-center">
+                    💫 Patrones Hegemónicos de Belleza y Aceptación Corporal
+                </h2>
+                
+                <div class="grid md:grid-cols-2 gap-8 mb-8">
+                    <div>
+                        <h4 class="text-xl font-semibold text-red-600 mb-4">⚠️ Patrones Hegemónicos</h4>
+                        <div class="bg-red-50 p-6 rounded-xl">
+                            <ul class="space-y-3 text-red-700">
+                                <li class="flex items-start"><span class="mr-2">•</span> Estándares irreales de belleza</li>
+                                <li class="flex items-start"><span class="mr-2">•</span> Presión de redes sociales</li>
+                                <li class="flex items-start"><span class="mr-2">•</span> Discriminación por apariencia</li>
+                                <li class="flex items-start"><span class="mr-2">•</span> Industria de la belleza comercial</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-xl font-semibold text-green-600 mb-4">✨ Aceptación Corporal</h4>
+                        <div class="bg-green-50 p-6 rounded-xl">
+                            <ul class="space-y-3 text-green-700">
+                                <li class="flex items-start"><span class="mr-2">•</span> Cada cuerpo es único y valioso</li>
+                                <li class="flex items-start"><span class="mr-2">•</span> La belleza es diversa</li>
+                                <li class="flex items-start"><span class="mr-2">•</span> Salud antes que apariencia</li>
+                                <li class="flex items-start"><span class="mr-2">•</span> Autoestima independiente de la imagen</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-gradient-to-r from-pink-100 to-purple-100 p-6 rounded-xl">
+                    <h4 class="font-semibold text-gray-800 mb-4">🌟 Consejos para una Relación Saludable con tu Cuerpo</h4>
+                    <div class="grid md:grid-cols-3 gap-4">
+                        <div class="bg-white p-4 rounded-lg">
+                            <h5 class="font-medium text-gray-800 mb-2">Practica la Gratitud</h5>
+                            <p class="text-sm text-gray-600">Agradece a tu cuerpo por todo lo que hace por ti</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg">
+                            <h5 class="font-medium text-gray-800 mb-2">Limita Comparaciones</h5>
+                            <p class="text-sm text-gray-600">Evita compararte con imágenes editadas en redes</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg">
+                            <h5 class="font-medium text-gray-800 mb-2">Cuida tu Salud</h5>
+                            <p class="text-sm text-gray-600">Enfócate en sentirte bien, no en lucir de cierta manera</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección: Salud Sexual -->
+        <section id="salud-sexual" class="section-content section-hidden">
+            <div class="bg-white rounded-xl shadow-lg p-8 mb-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6 flex items-center">
+                    🛡️ Prevención de Infecciones de Transmisión Sexual
+                </h2>
+                
+                <div class="grid md:grid-cols-2 gap-8 mb-8">
+                    <div>
+                        <h4 class="text-xl font-semibold text-blue-600 mb-4">📚 Información Esencial</h4>
+                        <div class="space-y-4">
+                            <div class="bg-blue-50 p-4 rounded-lg">
+                                <h5 class="font-medium text-blue-800 mb-2">¿Qué son las ITS?</h5>
+                                <p class="text-blue-700 text-sm">Infecciones que se transmiten principalmente por contacto sexual</p>
+                            </div>
+                            
+                            <div class="bg-blue-50 p-4 rounded-lg">
+                                <h5 class="font-medium text-blue-800 mb-2">ITS más comunes</h5>
+                                <p class="text-blue-700 text-sm">VIH, sífilis, gonorrea, clamidia, herpes, VPH</p>
+                            </div>
+                            
+                            <div class="bg-blue-50 p-4 rounded-lg">
+                                <h5 class="font-medium text-blue-800 mb-2">Síntomas a observar</h5>
+                                <p class="text-blue-700 text-sm">Muchas ITS pueden ser asintomáticas inicialmente</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-xl font-semibold text-green-600 mb-4">🛡️ Métodos de Prevención</h4>
+                        <div class="space-y-4">
+                            <div class="bg-green-50 p-4 rounded-lg border-l-4 border-green-400">
+                                <h5 class="font-medium text-green-800 mb-2">Uso de Preservativos</h5>
+                                <p class="text-green-700 text-sm">Método más efectivo para prevenir ITS</p>
+                            </div>
+                            
+                            <div class="bg-green-50 p-4 rounded-lg border-l-4 border-green-400">
+                                <h5 class="font-medium text-green-800 mb-2">Comunicación</h5>
+                                <p class="text-green-700 text-sm">Hablar abiertamente con la pareja sobre salud sexual</p>
+                            </div>
+                            
+                            <div class="bg-green-50 p-4 rounded-lg border-l-4 border-green-400">
+                                <h5 class="font-medium text-green-800 mb-2">Pruebas Regulares</h5>
+                                <p class="text-green-700 text-sm">Realizarse chequeos médicos periódicos</p>
+                            </div>
+                            
+                            <div class="bg-green-50 p-4 rounded-lg border-l-4 border-green-400">
+                                <h5 class="font-medium text-green-800 mb-2">Vacunación</h5>
+                                <p class="text-green-700 text-sm">Vacunas disponibles para VPH y hepatitis B</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-yellow-50 border border-yellow-200 p-6 rounded-xl">
+                    <h4 class="font-semibold text-yellow-800 mb-3">⚠️ Recuerda</h4>
+                    <p class="text-yellow-700 mb-3">La información no reemplaza la consulta médica. Siempre busca atención profesional para:</p>
+                    <ul class="text-yellow-700 space-y-1">
+                        <li>• Dudas sobre salud sexual</li>
+                        <li>• Síntomas preocupantes</li>
+                        <li>• Acceso a métodos anticonceptivos</li>
+                        <li>• Pruebas de detección de ITS</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección: Amor y Cuidado -->
+        <section id="amor-cuidado" class="section-content section-hidden">
+            <div class="bg-white rounded-xl shadow-lg p-8 mb-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6 flex items-center">
+                    💕 El Amor y el Cuidado Mutuo en las Relaciones Afectivas
+                </h2>
+                
+                <div class="grid md:grid-cols-2 gap-8 mb-8">
+                    <div>
+                        <h4 class="text-xl font-semibold text-pink-600 mb-4">💖 Características del Amor Saludable</h4>
+                        <div class="space-y-3">
+                            <div class="flex items-center space-x-3 bg-pink-50 p-3 rounded-lg">
+                                <span class="text-pink-500">✓</span>
+                                <span class="text-pink-800 font-medium">Respeto mutuo</span>
+                            </div>
+                            <div class="flex items-center space-x-3 bg-pink-50 p-3 rounded-lg">
+                                <span class="text-pink-500">✓</span>
+                                <span class="text-pink-800 font-medium">Comunicación honesta</span>
+                            </div>
+                            <div class="flex items-center space-x-3 bg-pink-50 p-3 rounded-lg">
+                                <span class="text-pink-500">✓</span>
+                                <span class="text-pink-800 font-medium">Apoyo en crecimiento personal</span>
+                            </div>
+                            <div class="flex items-center space-x-3 bg-pink-50 p-3 rounded-lg">
+                                <span class="text-pink-500">✓</span>
+                                <span class="text-pink-800 font-medium">Confianza y lealtad</span>
+                            </div>
+                            <div class="flex items-center space-x-3 bg-pink-50 p-3 rounded-lg">
+                                <span class="text-pink-500">✓</span>
+                                <span class="text-pink-800 font-medium">Espacio personal</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-xl font-semibold text-purple-600 mb-4">🤝 Cuidado Mutuo</h4>
+                        <div class="bg-gradient-to-br from-purple-50 to-indigo-100 p-6 rounded-xl">
+                            <div class="space-y-4">
+                                <div>
+                                    <h5 class="font-medium text-purple-800 mb-2">Cuidado Emocional</h5>
+                                    <p class="text-purple-700 text-sm">Escuchar, validar sentimientos, ofrecer apoyo</p>
+                                </div>
+                                
+                                <div>
+                                    <h5 class="font-medium text-purple-800 mb-2">Cuidado Físico</h5>
+                                    <p class="text-purple-700 text-sm">Respetar límites, promover bienestar</p>
+                                </div>
+                                
+                                <div>
+                                    <h5 class="font-medium text-purple-800 mb-2">Cuidado Mental</h5>
+                                    <p class="text-purple-700 text-sm">Fomentar autoestima, evitar críticas destructivas</p>
+                                </div>
+                                
+                                <div>
+                                    <h5 class="font-medium text-purple-800 mb-2">Cuidado Social</h5>
+                                    <p class="text-purple-700 text-sm">Respetar amistades, familia y actividades individuales</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-gradient-to-r from-blue-100 to-purple-100 p-6 rounded-xl">
+                    <h4 class="font-semibold text-gray-800 mb-4">💡 Consejos para Relaciones Saludables</h4>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h5 class="font-medium text-gray-800 mb-3">Comunicación Efectiva</h5>
+                            <ul class="space-y-2 text-gray-600 text-sm">
+                                <li>• Expresa tus sentimientos claramente</li>
+                                <li>• Escucha sin juzgar</li>
+                                <li>• Resuelve conflictos con respeto</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h5 class="font-medium text-gray-800 mb-3">Límites Saludables</h5>
+                            <ul class="space-y-2 text-gray-600 text-sm">
+                                <li>• Define qué es aceptable para ti</li>
+                                <li>• Comunica tus límites claramente</li>
+                                <li>• Respeta los límites de tu pareja</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección: Violencia de Género -->
+        <section id="violencia" class="section-content section-hidden">
+            <div class="bg-white rounded-xl shadow-lg p-8 mb-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6 flex items-center">
+                    🚨 La Violencia de Género en el Noviazgo
+                </h2>
+                
+                <div class="bg-red-50 border-l-4 border-red-400 p-6 rounded-r-xl mb-8">
+                    <h4 class="font-semibold text-red-800 mb-3">⚠️ Señales de Alerta</h4>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h5 class="font-medium text-red-700 mb-3">Violencia Psicológica</h5>
+                            <ul class="space-y-2 text-red-600 text-sm">
+                                <li>• Control excesivo (revisar celular, redes sociales)</li>
+                                <li>• Aislamiento de amigos y familia</li>
+                                <li>• Humillaciones y críticas constantes</li>
+                                <li>• Chantaje emocional</li>
+                                <li>• Celos extremos</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h5 class="font-medium text-red-700 mb-3">Violencia Física y Sexual</h5>
+                            <ul class="space-y-2 text-red-600 text-sm">
+                                <li>• Empujones, golpes, pellizcos</li>
+                                <li>• Presión para actividades sexuales</li>
+                                <li>• No respetar el "no"</li>
+                                <li>• Amenazas de violencia</li>
+                                <li>• Destruir objetos personales</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-8 mb-8">
+                    <div>
+                        <h4 class="text-xl font-semibold text-blue-600 mb-4">🛡️ Cómo Prevenir</h4>
+                        <div class="space-y-3">
+                            <div class="bg-blue-50 p-4 rounded-lg">
+                                <h5 class="font-medium text-blue-800 mb-2">Educación</h5>
+                                <p class="text-blue-700 text-sm">Conocer qué es violencia y qué no es normal en una relación</p>
+                            </div>
+                            
+                            <div class="bg-blue-50 p-4 rounded-lg">
+                                <h5 class="font-medium text-blue-800 mb-2">Autoestima</h5>
+                                <p class="text-blue-700 text-sm">Valorarte y saber que mereces respeto</p>
+                            </div>
+                            
+                            <div class="bg-blue-50 p-4 rounded-lg">
+                                <h5 class="font-medium text-blue-800 mb-2">Red de Apoyo</h5>
+                                <p class="text-blue-700 text-sm">Mantener vínculos con familia y amigos</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-xl font-semibold text-green-600 mb-4">🆘 Qué Hacer si Sufres Violencia</h4>
+                        <div class="space-y-3">
+                            <div class="bg-green-50 p-4 rounded-lg border-l-4 border-green-400">
+                                <h5 class="font-medium text-green-800 mb-2">Busca Ayuda</h5>
+                                <p class="text-green-700 text-sm">Habla con personas de confianza</p>
+                            </div>
+                            
+                            <div class="bg-green-50 p-4 rounded-lg border-l-4 border-green-400">
+                                <h5 class="font-medium text-green-800 mb-2">Documenta</h5>
+                                <p class="text-green-700 text-sm">Guarda evidencias (mensajes, fotos)</p>
+                            </div>
+                            
+                            <div class="bg-green-50 p-4 rounded-lg border-l-4 border-green-400">
+                                <h5 class="font-medium text-green-800 mb-2">Denuncia</h5>
+                                <p class="text-green-700 text-sm">Acude a autoridades competentes</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-purple-100 p-6 rounded-xl">
+                    <h4 class="font-semibold text-purple-800 mb-4">📞 Líneas de Ayuda</h4>
+                    <div class="grid md:grid-cols-3 gap-4">
+                        <div class="bg-white p-4 rounded-lg text-center">
+                            <h5 class="font-bold text-purple-800 text-lg">144</h5>
+                            <p class="text-purple-600 text-sm">Línea Nacional contra la Violencia de Género</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg text-center">
+                            <h5 class="font-bold text-purple-800 text-lg">911</h5>
+                            <p class="text-purple-600 text-sm">Emergencias</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg text-center">
+                            <h5 class="font-bold text-purple-800 text-lg">102</h5>
+                            <p class="text-purple-600 text-sm">Ayuda a Niños y Adolescentes</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección: Ciudadanía Digital -->
+        <section id="ciudadania" class="section-content section-hidden">
+            <div class="bg-white rounded-xl shadow-lg p-8 mb-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6 flex items-center">
+                    💻 La Construcción de la Ciudadanía Digital
+                </h2>
+                
+                <div class="grid md:grid-cols-2 gap-8 mb-8">
+                    <div>
+                        <h4 class="text-xl font-semibold text-blue-600 mb-4">🌐 ¿Qué es la Ciudadanía Digital?</h4>
+                        <div class="bg-blue-50 p-6 rounded-xl">
+                            <p class="text-blue-700 mb-4">
+                                Es la capacidad de participar de manera responsable, ética y segura en el mundo digital, 
+                                ejerciendo derechos y cumpliendo deberes en línea.
+                            </p>
+                            
+                            <div class="space-y-3">
+                                <div class="flex items-center space-x-2">
+                                    <span class="text-blue-500">✓</span>
+                                    <span class="text-blue-800 text-sm">Uso responsable de tecnología</span>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <span class="text-blue-500">✓</span>
+                                    <span class="text-blue-800 text-sm">Respeto por otros usuarios</span>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <span class="text-blue-500">✓</span>
+                                    <span class="text-blue-800 text-sm">Protección de datos personales</span>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <span class="text-blue-500">✓</span>
+                                    <span class="text-blue-800 text-sm">Pensamiento crítico online</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-xl font-semibold text-purple-600 mb-4">🛡️ Seguridad Digital</h4>
+                        <div class="space-y-4">
+                            <div class="bg-purple-50 p-4 rounded-lg">
+                                <h5 class="font-medium text-purple-800 mb-2">Contraseñas Seguras</h5>
+                                <p class="text-purple-700 text-sm">Usa contraseñas únicas y complejas para cada cuenta</p>
+                            </div>
+                            
+                            <div class="bg-purple-50 p-4 rounded-lg">
+                                <h5 class="font-medium text-purple-800 mb-2">Privacidad en Redes</h5>
+                                <p class="text-purple-700 text-sm">Configura adecuadamente la privacidad de tus perfiles</p>
+                            </div>
+                            
+                            <div class="bg-purple-50 p-4 rounded-lg">
+                                <h5 class="font-medium text-purple-800 mb-2">Información Personal</h5>
+                                <p class="text-purple-700 text-sm">No compartas datos sensibles con desconocidos</p>
+                            </div>
+                            
+                            <div class="bg-purple-50 p-4 rounded-lg">
+                                <h5 class="font-medium text-purple-800 mb-2">Verificación de Fuentes</h5>
+                                <p class="text-purple-700 text-sm">Confirma la veracidad antes de compartir información</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="grid md:grid-cols-3 gap-6 mb-8">
+                    <div class="card-hover bg-gradient-to-br from-green-50 to-emerald-100 p-6 rounded-xl">
+                        <div class="text-3xl mb-4">🤝</div>
+                        <h4 class="font-semibold text-gray-800 mb-2">Netiqueta</h4>
+                        <p class="text-gray-600 text-sm">Reglas de cortesía y respeto en internet</p>
+                    </div>
+                    
+                    <div class="card-hover bg-gradient-to-br from-yellow-50 to-orange-100 p-6 rounded-xl">
+                        <div class="text-3xl mb-4">🔍</div>
+                        <h4 class="font-semibold text-gray-800 mb-2">Fact-Checking</h4>
+                        <p class="text-gray-600 text-sm">Verificar información antes de creer o compartir</p>
+                    </div>
+                    
+                    <div class="card-hover bg-gradient-to-br from-red-50 to-pink-100 p-6 rounded-xl">
+                        <div class="text-3xl mb-4">🚫</div>
+                        <h4 class="font-semibold text-gray-800 mb-2">Anti-Ciberbullying</h4>
+                        <p class="text-gray-600 text-sm">Prevenir y combatir el acoso en línea</p>
+                    </div>
+                </div>
+                
+                <div class="bg-gradient-to-r from-indigo-100 to-purple-100 p-6 rounded-xl">
+                    <h4 class="font-semibold text-gray-800 mb-4">💡 Consejos para una Ciudadanía Digital Responsable</h4>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h5 class="font-medium text-gray-800 mb-3">Derechos Digitales</h5>
+                            <ul class="space-y-2 text-gray-600 text-sm">
+                                <li>• Derecho a la privacidad</li>
+                                <li>• Acceso a información veraz</li>
+                                <li>• Libertad de expresión responsable</li>
+                                <li>• Protección contra discriminación</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h5 class="font-medium text-gray-800 mb-3">Deberes Digitales</h5>
+                            <ul class="space-y-2 text-gray-600 text-sm">
+                                <li>• Respetar a otros usuarios</li>
+                                <li>• No difundir información falsa</li>
+                                <li>• Proteger la privacidad ajena</li>
+                                <li>• Denunciar contenido inapropiado</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quiz Interactivo -->
+        <div class="bg-white rounded-xl shadow-lg p-8 mb-8">
+            <h3 class="text-2xl font-bold text-gray-800 mb-6 text-center">🧠 Quiz: ¿Cuánto Aprendiste?</h3>
+            
+            <div id="quiz-container">
+                <div id="question-1" class="quiz-question">
+                    <h4 class="text-lg font-semibold text-gray-800 mb-4">1. ¿Cuál es una característica del amor saludable?</h4>
+                    <div class="space-y-3">
+                        <button onclick="selectAnswer(1, 'a', false)" class="quiz-option w-full text-left p-4 border border-gray-200 rounded-lg hover:bg-gray-50">
+                            a) Control total sobre la pareja
+                        </button>
+                        <button onclick="selectAnswer(1, 'b', true)" class="quiz-option w-full text-left p-4 border border-gray-200 rounded-lg hover:bg-gray-50">
+                            b) Respeto mutuo y comunicación honesta
+                        </button>
+                        <button onclick="selectAnswer(1, 'c', false)" class="quiz-option w-full text-left p-4 border border-gray-200 rounded-lg hover:bg-gray-50">
+                            c) Celos extremos como muestra de amor
+                        </button>
+                    </div>
+                    <div id="feedback-1" class="mt-4 hidden"></div>
+                </div>
+                
+                <div id="question-2" class="quiz-question hidden">
+                    <h4 class="text-lg font-semibold text-gray-800 mb-4">2. ¿Cuál es el método más efectivo para prevenir ITS?</h4>
+                    <div class="space-y-3">
+                        <button onclick="selectAnswer(2, 'a', false)" class="quiz-option w-full text-left p-4 border border-gray-200 rounded-lg hover:bg-gray-50">
+                            a) Evitar hablar del tema
+                        </button>
+                        <button onclick="selectAnswer(2, 'b', true)" class="quiz-option w-full text-left p-4 border border-gray-200 rounded-lg hover:bg-gray-50">
+                            b) Uso correcto de preservativos
+                        </button>
+                        <button onclick="selectAnswer(2, 'c', false)" class="quiz-option w-full text-left p-4 border border-gray-200 rounded-lg hover:bg-gray-50">
+                            c) Confiar solo en la suerte
+                        </button>
+                    </div>
+                    <div id="feedback-2" class="mt-4 hidden"></div>
+                </div>
+                
+                <div id="question-3" class="quiz-question hidden">
+                    <h4 class="text-lg font-semibold text-gray-800 mb-4">3. ¿Qué es una señal de violencia psicológica en el noviazgo?</h4>
+                    <div class="space-y-3">
+                        <button onclick="selectAnswer(3, 'a', true)" class="quiz-option w-full text-left p-4 border border-gray-200 rounded-lg hover:bg-gray-50">
+                            a) Control excesivo y aislamiento de amigos
+                        </button>
+                        <button onclick="selectAnswer(3, 'b', false)" class="quiz-option w-full text-left p-4 border border-gray-200 rounded-lg hover:bg-gray-50">
+                            b) Respetar los espacios personales
+                        </button>
+                        <button onclick="selectAnswer(3, 'c', false)" class="quiz-option w-full text-left p-4 border border-gray-200 rounded-lg hover:bg-gray-50">
+                            c) Comunicación abierta sobre sentimientos
+                        </button>
+                    </div>
+                    <div id="feedback-3" class="mt-4 hidden"></div>
+                </div>
+                
+                <div id="quiz-results" class="hidden text-center">
+                    <h4 class="text-xl font-bold text-green-600 mb-4">¡Felicitaciones! 🎉</h4>
+                    <p class="text-gray-700 mb-4">Has completado el quiz. Tu puntuación: <span id="score" class="font-bold text-blue-600"></span></p>
+                    <button onclick="restartQuiz()" class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-medium transition-colors">
+                        Reiniciar Quiz
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="gradient-bg text-white py-8">
+        <div class="container mx-auto px-6 text-center">
+            <h3 class="text-xl font-semibold mb-4">💪 Recuerda</h3>
+            <p class="text-lg opacity-90 mb-4">
+                Tu juventud es única y valiosa. Construye relaciones saludables, respeta la diversidad 
+                y cuida tu bienestar físico y emocional.
+            </p>
+            <div class="flex justify-center space-x-6 text-sm opacity-75">
+                <span>🌟 Respeto</span>
+                <span>💕 Amor Saludable</span>
+                <span>🛡️ Prevención</span>
+                <span>💻 Ciudadanía Digital</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        let currentQuestion = 1;
+        let score = 0;
+        let totalQuestions = 3;
+
+        function showSection(sectionId) {
+            // Ocultar todas las secciones
+            const sections = document.querySelectorAll('.section-content');
+            sections.forEach(section => {
+                section.classList.remove('section-active');
+                section.classList.add('section-hidden');
+            });
+            
+            // Mostrar la sección seleccionada
+            const targetSection = document.getElementById(sectionId);
+            if (targetSection) {
+                targetSection.classList.remove('section-hidden');
+                targetSection.classList.add('section-active');
+            }
+            
+            // Actualizar navegación
+            const navButtons = document.querySelectorAll('.nav-btn');
+            navButtons.forEach(btn => {
+                btn.classList.remove('nav-active');
+                btn.classList.add('text-gray-600', 'hover:text-blue-600');
+            });
+            
+            // Marcar botón activo
+            event.target.classList.add('nav-active');
+            event.target.classList.remove('text-gray-600', 'hover:text-blue-600');
+        }
+
+        function selectAnswer(questionNum, option, isCorrect) {
+            // Deshabilitar todas las opciones de esta pregunta
+            const questionDiv = document.getElementById(`question-${questionNum}`);
+            const options = questionDiv.querySelectorAll('.quiz-option');
+            
+            options.forEach(opt => {
+                opt.disabled = true;
+                opt.classList.remove('hover:bg-gray-50');
+            });
+            
+            // Marcar la respuesta seleccionada
+            const selectedOption = event.target;
+            if (isCorrect) {
+                selectedOption.classList.add('quiz-correct');
+                score++;
+            } else {
+                selectedOption.classList.add('quiz-incorrect');
+                // Mostrar la respuesta correcta
+                options.forEach(opt => {
+                    if (opt.onclick.toString().includes('true')) {
+                        opt.classList.add('quiz-correct');
+                    }
+                });
+            }
+            
+            // Mostrar feedback
+            const feedback = document.getElementById(`feedback-${questionNum}`);
+            feedback.classList.remove('hidden');
+            feedback.innerHTML = isCorrect ? 
+                '<p class="text-green-600 font-medium">¡Correcto! 🎉</p>' : 
+                '<p class="text-red-600 font-medium">Incorrecto. La respuesta correcta está marcada en verde.</p>';
+            
+            // Avanzar a la siguiente pregunta después de 2 segundos
+            setTimeout(() => {
+                if (currentQuestion < totalQuestions) {
+                    document.getElementById(`question-${currentQuestion}`).classList.add('hidden');
+                    currentQuestion++;
+                    document.getElementById(`question-${currentQuestion}`).classList.remove('hidden');
+                } else {
+                    // Mostrar resultados
+                    document.getElementById(`question-${currentQuestion}`).classList.add('hidden');
+                    document.getElementById('score').textContent = `${score}/${totalQuestions}`;
+                    document.getElementById('quiz-results').classList.remove('hidden');
+                }
+            }, 2000);
+        }
+
+        function restartQuiz() {
+            currentQuestion = 1;
+            score = 0;
+            
+            // Resetear todas las preguntas
+            for (let i = 1; i <= totalQuestions; i++) {
+                const questionDiv = document.getElementById(`question-${i}`);
+                const options = questionDiv.querySelectorAll('.quiz-option');
+                const feedback = document.getElementById(`feedback-${i}`);
+                
+                options.forEach(opt => {
+                    opt.disabled = false;
+                    opt.classList.remove('quiz-correct', 'quiz-incorrect');
+                    opt.classList.add('hover:bg-gray-50');
+                });
+                
+                feedback.classList.add('hidden');
+                questionDiv.classList.add('hidden');
+            }
+            
+            // Mostrar primera pregunta
+            document.getElementById('question-1').classList.remove('hidden');
+            document.getElementById('quiz-results').classList.add('hidden');
+        }
+
+        // Inicializar la primera sección como activa
+        document.addEventListener('DOMContentLoaded', function() {
+            showSection('formas-ser');
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'98355011b3b19b23',t:'MTc1ODU4MDkxOC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
